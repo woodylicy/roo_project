@@ -1,0 +1,88 @@
+body {
+  background-color: #111;
+  color: #eee;
+}
+
+header {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.header-logo {
+  width: 100px;
+  min-width: 100px;
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+.header-nav {
+  display: flex;
+  flex: 1 1 auto;
+  li {
+    height: 40px;
+    min-width: 100px;
+    line-height: 40px;
+    flex: 0 1 100px;
+    text-align: center;
+    a {
+      display: block;
+      color: inherit;
+      text-decoration: none;
+      &::after {
+        content: "";
+        display: block;
+        transform: rotateY(90deg);
+        border-bottom: 1px solid red;
+        transition: transform linear .2s;
+      }
+      &:hover::after {
+        transform: rotateY(40deg);
+      }
+      &.router-link-active,
+      &.router-link-exact-active {
+        border-radius: 4px;
+        // background-color: #f3b646;
+        color: #f3b646;
+      }
+    }
+    .icons::before {
+      vertical-align: text-bottom;
+      margin-right: 4px;
+    }
+    .icon-card::before {
+      transform: rotateX(180deg);
+    }
+  }
+}
+
+.icons::before {
+  font-family: "Material Icons";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px; /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: "liga";
+}
+
+.icon-card::before {
+  content: "style";
+}
